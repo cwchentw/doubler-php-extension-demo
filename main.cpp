@@ -28,7 +28,9 @@ Php::Value Doubler::float_number(Php::Parameters& params)
 Php::Value Doubler::str(Php::Parameters& params)
 {
   char* s = double_str((char*)params[0].rawValue());
-  return string(s);
+  string output = string(s);
+  str_free(s);
+  return output;
 }
 
 /**
